@@ -1,0 +1,23 @@
+== README
+
+Steps to put Resque in action.
+
+
+1. Start web server
+	- First tell resque gem about the environment.. so that Active Record etc. will be available
+	- Create a handler for workers.. that will be executed by the worker process started in step 2
+		it should have a perform method. 
+
+ 
+
+2. Start resque worker process to listen on queue
+	 QUEUE=file_serve rake resque:work
+
+
+3.  After posting request to queue refresh page to load.. data from queue.
+
+To launch sinnnatra web app from Rails_root below is command..
+
+	resque-web / resque-web -L
+	
+
